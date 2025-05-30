@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Drink2Go</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/media.css">
+	<link rel="icon" type="image/x-icon" href="img/svg/logo-head.svg">
+</head>
+<body>
+  <div class="container">
+    <header class="header header--closed">
+      <div class="header__container">
+        <div class="header__logos">
+          <a href="#" class="header__logo">
+            <picture>
+              <source srcset="img/png/logo-mobile.png" media="(max-width: 767px)">
+              <source srcset="img/png/logo-tablet.png" media="(max-width: 1024px)">
+              <source srcset="img/png/logo-desktop.png" media="(max-width: 1440px)">
+              <img class="header__logo" src="img/png/logo-desktop.png" alt="Логотип">
+            </picture>
+          </a>
+          <p class="logo__description">Самовизначення через навчання</p>
+        </div>
+    
+        <nav class="menu__list-block">
+          <ul class="menu__list">
+            <li class="menu__item"><a href="#" class="menu__link menu__link-active">Головна</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Мій шлях у ІТ</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Портфоліо</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Майбутнє</a></li>
+          </ul>
+        </nav>
+    
+        <ul class="user__list">
+          <li class="user__list-item">
+            <a href="#" class="user__list-link">
+              <svg class="user__list-icon" width="16" height="16" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6667 
+                4C10.6667 5.47276 9.47276 6.66667 8 6.66667C6.52724 6.66667 
+                5.33333 5.47276 5.33333 4C5.33333 2.52724 6.52724 1.33333 8 
+                1.33333C9.47276 1.33333 10.6667 2.52724 10.6667 4ZM12 4C12 
+                6.20914 10.2091 8 8 8C5.79086 8 4 6.20914 4 4C4 1.79086 5.79086 
+                0 8 0C10.2091 0 12 1.79086 12 4ZM3.19673 12.3102C4.43611 11.2774 
+                6.1613 10.6667 8 10.6667C9.8387 10.6667 11.5639 11.2774 12.8033 
+                12.3102C14.0354 13.337 14.6667 14.6719 14.6667 16H16C16 14.2321 
+                15.1573 12.5363 13.6569 11.286C12.1566 10.0357 10.1218 9.33333 
+                8 9.33333C5.87821 9.33333 3.8434 10.0357 2.34315 11.286C0.842686 
+                12.5363 0 14.2321 0 16L1.33333 16C1.33333 14.6719 1.96465 13.337 
+                3.19673 12.3102Z" fill="currentColor"/>
+              </svg>
+              <span class="user__list-description">Увійти</span>
+            </a>
+          </li>
+
+          <li class="user__list-item">
+            <a href="#" class="user__list-link">
+              <svg class="user__list-icon" width="16" height="16" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.66091 3.87546L5.89351 
+                6.66667H10.1065L10.3391 3.87546C10.4531 2.50699 9.37321 1.33333 8 
+                1.33333C6.62679 1.33333 5.54687 2.50699 5.66091 3.87546ZM11.4444 
+                6.66667L11.6678 3.98618C11.8466 1.84036 10.1533 0 8 0C5.84674 0 4.15336 
+                1.84036 4.33218 3.98618L4.55556 6.66667H1.34687H0L0.190476 8L1.00626 
+                13.7105C1.19393 15.0242 2.31905 16 3.64612 16H12.3539C13.6809 16 14.8061 
+                15.0242 14.9937 13.7105L15.8095 8L16 6.66667H14.6531H11.4444ZM11.3333 
+                8H11.2801L11.0579 10.6667H14.0817L14.4627 8H11.3333ZM9.94213 
+                8H6.05787L6.28009 10.6667H9.71991L9.94213 8ZM4.71991 8H4.66667H1.53735L1.9183 
+                10.6667H4.94213L4.71991 8ZM6.61342 14.6667L6.3912 12H9.6088L9.38658 
+                14.6667H6.61342ZM10.9468 12L10.7245 14.6667H12.3539C13.0174 14.6667 13.58 
+                14.1788 13.6738 13.5219L13.8912 12H10.9468ZM5.05324 12L5.27547 
+                14.6667H3.64612C2.98259 14.6667 2.42003 14.1788 2.32619 13.5219L2.10877 
+                12H5.05324Z" fill="currentColor"/>
+              </svg>
+              <span class="basket-notification" id="basket-count"></span>
+              <span class="user__list-description">Кошик</span>
+            </a>
+          </li>
+
+          <li class="user__list-item">
+            <button class="header__toggle" type="button"></button>
+          </li>  
+        </ul>
+      </div>    
+    </header>
+
+    <section class="slider" id="slider">
+      <ul class="slider__list">
+        <li class="slider__item slider__item_1 active">
+          <div class="slider__content">
+            <div class="slider__image">
+              <picture>
+                <source srcset="img/png/web_developer-mobile.png" media="(max-width: 767px)">
+                <source srcset="img/png/web_developer-tablet.png" media="(max-width: 1024px)">
+                <source srcset="img/png/web_developer-desktop.png" media="(max-width: 1440px)">
+                <img src="img/png/web_developer-desktop.png" class="slider__image-img" alt="Веб-розробник">
+              </picture>
+            </div>
+            <div class="slider__info">
+              <p class="slider__new">Портфоліо!</p>
+              <h1 class="slider__title">Веб - розробник</h1>
+              <p class="slider__description">Цифровий архітектор, який будує візуальні всесвіти — від елегантних односторінкових сайтів до потужних веб-додатків. Його інструменти — чистий код, сучасні фреймворки та безмежна уява.</p>
+              <div class="slider__price-block">
+                <a class="slider__button-link" href="https://artem-kapelush.github.io/front-end-developer/ua.html" target="_blank">
+                  <button class="slider__button">Перейти на веб-сайт</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="slider__item slider__item_2">
+          <div class="slider__content">
+            <div class="slider__image">
+              <picture>
+                <source srcset="img/png/lego_site-mobile.png" media="(max-width: 767px)">
+                <source srcset="img/png/lego_site-tablet.png" media="(max-width: 1024px)">
+                <source srcset="img/png/lego_site-desktop.png" media="(max-width: 1440px)">
+                <img src="img/png/lego_site-desktop.png" class="slider__image-img" alt="Лате">
+              </picture>
+            </div>
+            <div class="slider__info">
+              <p class="slider__new">Портфоліо!</p>
+              <h1 class="slider__title">Інтернет магазин LEGO</h1>
+              <p class="slider__description">Збирайте мрії по шматочках! У магазині LEGO – це не просто конструктори, а шлях до інженерного мислення, уяви та винахідливості. Від класичних наборів до ексклюзивних колекцій – тут кожен знайде свій ідеальний світ!</p>
+              <div class="slider__price-block">
+                <a class="slider__button-link" href="https://artem-kapelush.github.io/LEGO/Home.html" target="_blank">
+                  <button class="slider__button">Перейти на веб-сайт</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="slider__item slider__item_3">
+          <div class="slider__content">
+            <div class="slider__image">
+              <picture>
+                <source srcset="img/png/forum-mobile.png" media="(max-width: 767px)">
+                <source srcset="img/png/forum-tablet.png" media="(max-width: 1024px)">
+                <source srcset="img/png/forum-desktop.png" media="(max-width: 1440px)">
+                <img src="img/png/forum-desktop.png" class="slider__image-img" alt="Капучино">
+              </picture>
+            </div>
+            <div class="slider__info">
+              <p class="slider__new">Портфоліо!</p>
+              <h1 class="slider__title">Інтернет - форум</h1>
+              <p class="slider__description">Форум – це не просто чати, а живі організми з власною атмосферою. Проста структура, зручний інтерфейс і акцент на живу комунікацію — усе, що потрібно для справжньої онлайн-спільноти.</p>
+              <div class="slider__price-block">
+                <a class="slider__button-link" href="https://artem-kapelush.github.io/forum/home.html" target="_blank">
+                  <button class="slider__button">Перейти на веб-сайт</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="slider__item slider__item_4">
+          <div class="slider__content">
+            <div class="slider__image">
+              <picture>
+                <source srcset="img/png/florwers-mobile.png" media="(max-width: 767px)">
+                <source srcset="img/png/florwers-tablet.png" media="(max-width: 1024px)">
+                <source srcset="img/png/florwers-desktop.png" media="(max-width: 1440px)">
+                <img src="img/png/florwers-desktop.png" class="slider__image-img" alt="Капучино">
+              </picture>
+            </div>
+            <div class="slider__info">
+              <p class="slider__new">Портфоліо!</p>
+              <h1 class="slider__title">Інтернет магазин квітів</h1>
+              <p class="slider__description">Наш сайт дарує можливість створювати особливі моменти, пропонуючи швидкий підбір квітів та просте замовлення без виходу з дому – ідеальне рішення для тих, хто цінує свій час та емоції!</p>
+              <div class="slider__price-block">
+                <a class="slider__button-link" href="https://artem-kapelush.github.io/florwers/index.html" target="_blank">
+                  <button class="slider__button">Перейти на веб-сайт</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <button class="slider__nav-button prev">
+        <img src="img/svg/arrow-left.svg" alt="Іконка користувача" class="user__list-icon">
+      </button>
+      <button class="slider__nav-button next">
+        <img src="img/svg/arrow-right.svg" alt="Іконка користувача" class="user__list-icon">
+      </button>
+
+      <div class="slider__dots">
+        <span class="slider__dot active"></span>
+        <span class="slider__dot"></span>
+        <span class="slider__dot"></span>
+        <span class="slider__dot"></span>
+      </div>
+    </section>
+        
+    <section class="advantages">
+      <h4 class="advantages__title title" id="advantages">Навички</h4>
+      <h2 class="advantages__subtitle subtitle">Головні Soft skills, що визначають мене</h2>
+      <ul class="advantages__list">
+        <li class="advantages__item advantages__item-1">
+          <img src="img/svg/purposefulness.svg" class="advantage__icon advantage__icon-purposefulness" alt="Цілеспрямованість">
+          <h3 class="advantages__item-title">Цілеспрямованість</h3>
+          <p class="advantages__item-text">Визначаю чіткі цілі і наполегливо рухаюсь до їх досягнення.</p>
+        </li>
+        <li class="advantages__item advantages__item-2">
+          <img src="img/svg/stress-management.svg" class="advantage__icon advantage__icon-stress" alt="Управління стрессом">
+          <h3 class="advantages__item-title">Управління стрессом</h3>
+          <p class="advantages__item-text">Зберігаю спокій та ефективність у складних ситуаціях.</p>
+        </li>
+        <li class="advantages__item advantages__item-3">
+          <img src="img/svg/ability-to-listen.svg" class="advantage__icon advantage__icon-listen" alt="Вміння слухати">
+          <h3 class="advantages__item-title">Вміння слухати</h3>
+          <p class="advantages__item-text">Уважно сприймаю думки інших, враховуючи їх у роботі.</p>
+        </li>
+        <li class="advantages__item advantages__item-4">
+          <img src="img/svg/responsibility.svg" class="advantage__icon advantage__icon-responsibility" alt="Відповідальність">
+          <h3 class="advantages__item-title">Відповідальність</h3>
+          <p class="advantages__item-text">Виконую задачі, дотримуюсь дедлайнів і гарантую результат.</p>
+        </li>
+      </ul>
+
+      <h2 class="advantages__subtitle advantages__subtitle-2 subtitle">Головні Hard skills, які я опанував</h2>
+      <ul class="advantages__list">
+        <li class="advantages__item advantages__item-1">
+          <img src="img/svg/website-layout.svg" class="advantage__icon advantage__icon-website" alt="Верстка сайтів">
+          <h3 class="advantages__item-title">Верстка сайтів</h3>
+          <p class="advantages__item-text">Розробляю зовнішній вигляд сторінок, використовуючи HTML і CSS.</p>
+        </li>
+        <li class="advantages__item advantages__item-2">
+          <img src="img/svg/js-basics.svg" class="advantage__icon advantage__icon-js" alt="Основи JavaScript">
+          <h3 class="advantages__item-title">Основи JavaScript</h3>
+          <p class="advantages__item-text">Додаю інтерактивність і динамічні елементи до сучасних веб-сторінок.</p>
+        </li>
+        <li class="advantages__item advantages__item-3">
+          <img src="img/svg/adaptive-design.svg" class="advantage__icon advantage__icon-adaptive" alt="Адаптивний дизайн">
+          <h3 class="advantages__item-title">Адаптивний дизайн</h3>
+          <p class="advantages__item-text">Забезпечую коректне відображення сайтів на різних пристроях.</p>
+        </li>
+        <li class="advantages__item advantages__item-4">
+          <img src="img/svg/debugging.svg" class="advantage__icon advantage__icon-debugging" alt="Пошук помилок">
+          <h3 class="advantages__item-title">Пошук помилок</h3>
+          <p class="advantages__item-text">Знаходжу та виправляю синтаксичні чи логічні помилки аналізуючи код.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="catalog">
+      <h4 class="catalog__title title" id="catalog">Каталог можливостей</h4>
+      <h2 class="catalog__subtitle subtitle">Напрямки для здобуття практичного досвіду та подальшого розвитку</h2>
+      <div class="catalog__container">
+        <form class="filter__container">
+          <fieldset class="filter__price">
+            <h3 class="filter__title filter__title-price">Середня ціна проєкту</h3>
+            <div class="price-range">
+              <div class="price-slider">
+                <div class="bar"></div>
+                <div class="handle"></div>
+                <div class="handle"></div>
+              </div>
+              <div class="price-inputs">
+                <input class="price-input" type="text" placeholder="0" value="0">
+                <span class="price-separator"></span>
+                <input class="price-input" type="text" placeholder="900" value="900">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="filter__age">
+            <h3 class="filter__title filter__title-age">Вік входу на платформу</h3>
+            <div class="filter__list age__options">
+              <div class="filter__item age__option">
+                <input type="radio" id="any-age" name="age" checked>
+                <label for="any-age">Будь-який вік</label>
+              </div>
+              <div class="filter__item age__option">
+                <input type="radio" id="age-16" name="age">
+                <label for="age-16">Від 16 років</label>
+              </div>
+              <div class="filter__item age__option">
+                <input type="radio" id="age-18" name="age">
+                <label for="age-18">Від 18 років</label>
+              </div>
+              <div class="filter__item age__option">
+                <input type="radio" id="age-21" name="age" disabled>
+                <label for="age-21">Від 21 років</label>
+              </div>
+            </div>  
+          </fieldset>
+
+          <fieldset class="filter__commission">
+            <h3 class="filter__title filter__title-commission">Комісія платформи</h3>
+            <div class="filter__list commission__options">
+              <div class="filter__item commission__option">
+                <input type="radio" id="commission-any" name="commission" checked>
+                <label for="commission-any">Неважливо</label>
+              </div>
+              <div class="filter__item commission__option">
+                <input type="radio" id="commission-low" name="commission">
+                <label for="commission-low">До 10% включно</label>
+              </div>
+              <div class="filter__item commission__option">
+                <input type="radio" id="commission-medium" name="commission">
+                <label for="commission-medium">10 – 20% не включно</label>
+              </div>
+              <div class="filter__item commission__option">
+                <input type="radio" id="commission-high" name="commission">
+                <label for="commission-high">Понад 20%</label>
+              </div>
+            </div>  
+          </fieldset>
+
+          <fieldset class="filter__platform">
+            <h3 class="filter__title filter__title-platform">Тип платформи:</h3>
+            <div class="platform-options">
+              <label class="platform-switch">
+                <input type="checkbox" checked>
+                <span class="platform-toggle"></span>
+                <span class="platform-label">Для новачків</span>
+              </label>
+              <label class="platform-switch">
+                <input type="checkbox">
+                <span class="platform-toggle"></span>
+                <span class="platform-label">Для досвідчених фахівців</span>
+              </label>
+              <label class="platform-switch">
+                <input type="checkbox">
+                <span class="platform-toggle"></span>
+                <span class="platform-label">Преміум рівень</span>
+              </label>
+              <label class="platform-switch disabled">
+                <input type="checkbox" disabled>
+                <span class="platform-toggle"></span>
+                <span class="platform-label">Для спеціалістів середнього рівня</span>
+              </label>
+            </div>
+          </fieldset>
+          
+          <fieldset class="filter__buttons">
+            <button class="filter__button" type="submit">Застосувати</button>
+            <button class="filter__button filter__button-reset" type="reset">Скинути</button>
+          </fieldset>
+        </form>
+      
+        <div class="catalog__products">
+          <div class="catalog__sort">
+            <label for="sorting" class="catalog__sort-label">Сортування:</label>
+            <select id="sorting" class="catalog__select">
+              <option class="catalog__control" value="default">За замовчуванням</option>
+              <option class="catalog__control" value="price-asc">Ціна (від низької)</option>
+              <option class="catalog__control" value="price-desc">Ціна (від високої)</option>
+              <option class="catalog__control" value="fee-asc">Комісія (від низької)</option>
+              <option class="catalog__control" value="fee-desc">Комісія (від високої)</option>
+              <option class="catalog__control" value="age-asc">Вік входу (від 16+)</option>
+              <option class="catalog__control" value="age-desc">Вік входу (від 18+)</option>
+            </select>
+          </div>
+    
+          <ul class="catalog__list">
+            <li class="catalog__item">
+              <a class="catalog__link-img" href="#">
+                <picture>
+                  <source srcset="img/png/toptal.png" media="(max-width: 1440px)">
+                  <img src="img/png/toptal.png" class="catalog__img" alt="Toptal">
+                </picture>
+              </a>  
+              <a class="catalog__link-title" href="#">
+                <h3 class="catalog__item-title">Toptal</h3>
+              </a>
+              <p class="catalog__item-desc">Елітна платформа для топових IT-фахівців. Потрапити складно без значного досвіду. Жорсткий відбір, але високі ставки та преміум-проекти</p>
+              <div class="catalog__meta">
+                <span class="catalog__meta-item catalog__meta-price"><strong>Середня ціна:</strong> 800$</span>
+                <span class="catalog__meta-item catalog__meta-commission"><strong>Комісія:</strong> 50%</span>
+                <span class="catalog__meta-item catalog__meta-age"><strong>Вік входу:</strong> 18+</span>
+              </div>
+              <div class="catalog__buy">    
+                <button class="catalog__cart-button">
+                  <img src="img/svg/add-to-basket.svg" alt="Додати до кошика">
+                  <span>В кошик</span>
+                </button>
+              </div>
+            </li>
+  
+            <li class="catalog__item">
+              <a class="catalog__link-img" href="#">
+                <picture>
+                  <source srcset="img/png/upwork.png" media="(max-width: 1440px)">
+                  <img src="img/png/upwork.png" class="catalog__img" alt="Upwork">
+                </picture>
+              </a>  
+              <a class="catalog__link-title" href="#">
+                <h3 class="catalog__item-title">Upwork</h3>
+              </a>
+              <p class="catalog__item-desc">Одна з найбільших платформ із реальними замовниками та захистом платежів. Підходить для всіх рівнів спеціалістів. Є проєкти різної складності та тривалості.</p>
+              <div class="catalog__meta">
+                <span class="catalog__meta-item catalog__meta-price"><strong>Середня ціна:</strong> 300$</span>
+                <span class="catalog__meta-item catalog__meta-commission"><strong>Комісія:</strong> 20%</span>
+                <span class="catalog__meta-item catalog__meta-age"><strong>Вік входу:</strong> 18+</span>
+              </div>
+              <div class="catalog__buy">
+                <button class="catalog__cart-button">
+                  <img src="img/svg/add-to-basket.svg" alt="Додати до кошика">
+                  <span>В кошик</span>
+                </button>
+              </div>
+            </li>
+  
+            <li class="catalog__item">
+              <a class="catalog__link-img" href="#">
+                <picture>
+                  <source srcset="img/png/fiverr.png" media="(max-width: 1440px)">
+                  <img src="img/png/fiverr.png" class="catalog__img" alt="Fiverr">
+                </picture>
+              </a>  
+              <a class="catalog__link-title" href="#">
+                <h3 class="catalog__item-title">Fiverr</h3>
+              </a>
+              <p class="catalog__item-desc">Зручна для новачків із простими завданнями. “Гіги” із фіксованою ціною спрощують запуск. Конкуренція є, але замовлення знайти реально.</p>
+              <div class="catalog__meta">
+                <span class="catalog__meta-item catalog__meta-price"><strong>Середня ціна:</strong> 150$</span>
+                <span class="catalog__meta-item catalog__meta-commission"><strong>Комісія:</strong> 20%</span>
+                <span class="catalog__meta-item catalog__meta-age"><strong>Вік входу:</strong> 16+</span>
+              </div>
+              <div class="catalog__buy">
+                <button class="catalog__cart-button">
+                  <img src="img/svg/add-to-basket.svg" alt="Додати до кошика">
+                  <span>В кошик</span>
+                </button>
+              </div>
+            </li>
+  
+            <li class="catalog__item">
+              <a class="catalog__link-img" href="#">
+                <picture>
+                  <source srcset="img/png/pricework.png" media="(max-width: 1440px)">
+                  <img src="img/png/pricework.png" class="catalog__img" alt="PriceWork">
+                </picture>
+              </a>  
+              <a class="catalog__link-title" href="#">
+                <h3 class="catalog__item-title">PriceWork</h3>
+              </a>
+              <p class="catalog__item-desc">Менш відома платформа для простих і швидких завдань. Можна швидко знайти невеликі замовлення для старту портфоліо. Зручна для початківців, але великих проєктів мало.</p>
+              <div class="catalog__meta">
+                <span class="catalog__meta-item catalog__meta-price"><strong>Середня ціна:</strong> 100$</span>
+                <span class="catalog__meta-item catalog__meta-commission"><strong>Комісія:</strong> 8%</span>
+                <span class="catalog__meta-item catalog__meta-age"><strong>Вік входу:</strong> 16+</span>
+              </div>
+              <div class="catalog__buy">
+                <button class="catalog__cart-button">
+                  <img src="img/svg/add-to-basket.svg" alt="Додати до кошика">
+                  <span>В кошик</span>
+                </button>
+              </div>
+            </li>
+  
+            <li class="catalog__item">
+              <a class="catalog__link-img" href="#">
+                <picture>
+                  <source srcset="img/png/peopleperhour.png" media="(max-width: 1440px)">
+                  <img src="img/png/peopleperhour.png" class="catalog__img" alt="PeoplePerHour">
+                </picture>
+              </a>  
+              <a class="catalog__link-title" href="#">
+                <h3 class="catalog__item-title">PeoplePerHour</h3>
+              </a>
+              <p class="catalog__item-desc">Європейська платформа з акцентом на проєктну роботу. Чіткі рейтинги, прозорі умови та зручний пошук проєктів створюють чесну конкуренцію для фахівців різного рівня.</p>
+              <div class="catalog__meta">
+                <span class="catalog__meta-item catalog__meta-price"><strong>Середня ціна:</strong> 250$</span>
+                <span class="catalog__meta-item catalog__meta-commission"><strong>Комісія:</strong> 20%</span>
+                <span class="catalog__meta-item catalog__meta-age"><strong>Вік входу:</strong> 18+</span>
+              </div>
+              <div class="catalog__buy">
+                <button class="catalog__cart-button">
+                  <img src="img/svg/add-to-basket.svg" alt="Додати до кошика">
+                  <span>В кошик</span>
+                </button>
+              </div>
+            </li>
+  
+            <li class="catalog__item">
+              <a class="catalog__link-img" href="#">
+                <picture>
+                  <source srcset="img/png/freelancehunt.png" media="(max-width: 1440px)">
+                  <img src="img/png/freelancehunt.png" class="catalog__img" alt="Freelancehunt">
+                </picture>
+              </a>  
+              <a class="catalog__link-title" href="#">
+                <h3 class="catalog__item-title">Freelancehunt</h3>
+              </a>
+              <p class="catalog__item-desc">Freelancehunt.com — українська платформа з простим інтерфейсом і активною спільнотою. Ідеально підходить для старту, пошуку перших клієнтів та розвитку портфоліо.</p>
+              <div class="catalog__meta">
+                <span class="catalog__meta-item catalog__meta-price"><strong>Середня ціна:</strong> 100$</span>
+                <span class="catalog__meta-item catalog__meta-commission"><strong>Комісія:</strong> 12%</span>
+                <span class="catalog__meta-item catalog__meta-age"><strong>Вік входу:</strong> 16+</span>
+              </div>
+              <div class="catalog__buy">
+                <button class="catalog__cart-button">
+                  <img src="img/svg/add-to-basket.svg" alt="Додати до кошика">
+                  <span>В кошик</span>
+                </button>
+              </div>
+            </li>
+
+            <li class="catalog__item">
+              <a class="catalog__link-img" href="#">
+                <picture>
+                  <source srcset="img/png/guru.png" media="(max-width: 1440px)">
+                  <img src="img/png/guru.png" class="catalog__img" alt="Guru">
+                </picture>
+              </a>  
+              <a class="catalog__link-title" href="#">
+                <h3 class="catalog__item-title">Guru</h3>
+              </a>
+              <p class="catalog__item-desc">Універсальна платформа для фахівців з різних ІТ-напрямів. Гнучкі умови співпраці та перевірені замовники. Можна працювати як проєктно, так і довгостроково.</p>
+              <div class="catalog__meta">
+                <span class="catalog__meta-item catalog__meta-price"><strong>Середня ціна:</strong> 500$</span>
+                <span class="catalog__meta-item catalog__meta-commission"><strong>Комісія:</strong> 9%</span>
+                <span class="catalog__meta-item catalog__meta-age"><strong>Вік входу:</strong> 18+</span>
+              </div>
+              <div class="catalog__buy">
+                <button class="catalog__cart-button">
+                  <img src="img/svg/add-to-basket.svg" alt="Додати до кошика">
+                  <span>В кошик</span>
+                </button>
+              </div>
+            </li>
+  
+            <li class="catalog__item">
+              <a class="catalog__link-img" href="#">
+                <picture>
+                  <source srcset="img/png/freelancer.png" media="(max-width: 1440px)">
+                  <img src="img/png/freelancer.png" class="catalog__img" alt="Freelancer">
+                </picture>
+              </a>  
+              <a class="catalog__link-title" href="#">
+                <h3 class="catalog__item-title">Freelancer</h3>
+              </a>
+              <p class="catalog__item-desc">Велика фріланс біржа з багатьма напрямами та вакансіями. Багато малих замовлень, але є й серйозні контракти. Широкий діапазон цін і типів проєктів.</p>
+              <div class="catalog__meta">
+                <span class="catalog__meta-item catalog__meta-price"><strong>Середня ціна:</strong> 300$</span>
+                <span class="catalog__meta-item catalog__meta-commission"><strong>Комісія:</strong> 10%</span>
+                <span class="catalog__meta-item catalog__meta-age"><strong>Вік входу:</strong> 16+</span>
+              </div>
+              <div class="catalog__buy">
+                <button class="catalog__cart-button">
+                  <img src="img/svg/add-to-basket.svg" alt="Додати до кошика">
+                  <span>В кошик</span>
+                </button>
+              </div>
+            </li>
+  
+            <li class="catalog__item">
+              <a class="catalog__link-img" href="#">
+                <picture>
+                  <source srcset="img/png/codeable.png" media="(max-width: 1440px)">
+                  <img src="img/png/codeable.png" class="catalog__img" alt="Codeable">
+                </picture>
+              </a>  
+              <a class="catalog__link-title" href="#">
+                <h3 class="catalog__item-title">Codeable</h3>
+              </a>
+              <p class="catalog__item-desc">Нішова платформа для WordPress-розробників. Робота тільки з перевіреними клієнтами. Вимагає якісного портфоліо та проходження відбору.</p>
+              <div class="catalog__meta">
+                <span class="catalog__meta-item catalog__meta-price"><strong>Середня ціна:</strong> 767$</span>
+                <span class="catalog__meta-item catalog__meta-commission"><strong>Комісія:</strong> 15%</span>
+                <span class="catalog__meta-item catalog__meta-age"><strong>Вік входу:</strong> 18+</span>
+              </div>
+              <div class="catalog__buy">
+                <button class="catalog__cart-button">
+                  <img src="img/svg/add-to-basket.svg" alt="Додати до кошика">
+                  <span>В кошик</span>
+                </button>
+              </div>
+            </li>
+  
+            <li class="catalog__item">
+              <a class="catalog__link-img" href="#">
+                <picture>
+                  <source srcset="img/png/truelancer.png" media="(max-width: 1440px)">
+                  <img src="img/png/truelancer.png" class="catalog__img" alt="Truelancer">
+                </picture>
+              </a>  
+              <a class="catalog__link-title" href="#">
+                <h3 class="catalog__item-title">Truelancer</h3>
+              </a>
+              <p class="catalog__item-desc">Популярний в Азії ринок фрілансу. Платформа з широким вибором короткотермінових проєктів. Ідеально підходить для новачків.</p>
+              <div class="catalog__meta">
+                <span class="catalog__meta-item catalog__meta-price"><strong>Середня ціна:</strong> 200$</span>
+                <span class="catalog__meta-item catalog__meta-commission"><strong>Комісія:</strong> 10%</span>
+                <span class="catalog__meta-item catalog__meta-age"><strong>Вік входу:</strong> 18+</span>
+              </div>
+              <div class="catalog__buy">
+                <button class="catalog__cart-button">
+                  <img src="img/svg/add-to-basket.svg" alt="Додати до кошика">
+                  <span>В кошик</span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="catalog__pagination">
+        <button class="pagination__button pagination__button-back">
+          <span>Назад</span>
+          <svg class="pagination__button-icon" width="6" height="10" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.71661 0L11 1.32082L2.56677 10L11 18.6792L9.71661 20L0 10L9.71661 0Z" fill="currentColor"/>
+          </svg>
+        </button>
+        
+        <ul class="pagination__list">
+          <li class="pagination__item pagination__item-activ">
+            <a class="padination__link padination__link-active" href="#">1</a>
+          </li>
+
+          <li class="pagination__iteme">
+            <a class="padination__link" href="#">2</a>
+          </li>
+
+          <li class="pagination__item">
+            <a class="padination__link" href="#">3</a>
+          </li>
+        </ul>
+
+        <button class="pagination__button pagination__button-next">
+          <span>Вперед</span>
+          <svg class="pagination__button-icon" width="6" height="10" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.28339 0L0 1.32082L8.43323 10L0 18.6792L1.28339 20L11 10L1.28339 0Z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2675.7022613814097!2d35.0746064!3d47.884091500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc6420e210b107%3A0x63c363e7109addac!2z0YPQuy4g0JTQvNC40YLRgNC40Y8g0JLQuNGI0L3QtdCy0LXRhtC60L7Qs9C-LCA4LCDQl9Cw0L_QvtGA0L7QttGM0LUsINCX0LDQv9C-0YDQvtC20YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDY5MDAw!5e0!3m2!1sru!2sua!4v1748203273954!5m2!1sru!2sua" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <div class="footer__wrapper-header">
+          <div class="footer__social">
+            <a href="#" class="footer__logo-block">
+              <picture>
+                <source srcset="img/png/logo-tablet.png" media="(max-width: 767px)">
+                <source srcset="img/png/logo-desktop.png" media="(max-width: 1440px)">
+                <img class="footer__logo-img" src="img/png/logo-desktop.png" alt="Логотип">
+              </picture>
+              <p class="footer__logo-description">Самовизначення через навчання</p>
+            </a>
+      
+            <ul class="footer__social-list">
+              <li class="social__list-item">
+                <a class="social__list-link telegram" href="https://t.me/artem_Kape" target="_blank">
+                  <svg class="social__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 240 240" fill="currentColor">
+                    <path d="M120 0C53.729 0 0 53.729 0 120s53.729 120 120 120 120-53.729 120-120S186.271 0 120 0zm57.7 81.6l-19.3 91.2c-1.5 6.6-5.4 8.3-10.9 5.2l-30-22.1-14.4 13.9c-1.6 1.6-3 3-6.1 3l2.2-31.2 56.9-51.3c2.5-2.2-0.5-3.5-3.9-1.3l-70.5 44.3-30.3-9.5c-6.6-2-6.7-6.6 1.4-9.7l118.6-45.8c5.5-2 10.3 1.3 8.6 9.3z"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__list-item">
+                <a class="social__list-link pinterest" href="https://www.pinterest.com/artem08sasha10/" target="_blank">
+                  <svg class="social__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" fill="currentColor">
+                    <path d="M256 8C119.0 8 8 119.0 8 256c0 109.1 70.8 201.7 169.2 234.3-2.3-19.9-4.4-50.6.9-72.5 4.8-20.4 31-129.9 31-129.9s-7.9-15.8-7.9-39.1c0-36.6 21.2-63.9 47.6-63.9 22.4 0 33.2 16.8 33.2 36.9 0 22.5-14.3 56.1-21.7 87.3-6.1 25.9 12.9 47 38.3 47 46 0 76.9-59.1 76.9-129.1 0-53.3-35.9-93.2-101.1-93.2-73.7 0-119.7 55-119.7 116.4 0 21.2 6.3 36.1 16.2 47.7 4.5 5.3 5.1 7.4 3.5 13.4-1.2 4.4-3.9 15-5.1 19.2-1.7 6.2-6.6 8.4-12.1 6.1-33.8-13.8-49.6-50.9-49.6-92.8 0-68.9 58.1-151.4 173.4-151.4 92.7 0 153.6 67.1 153.6 139.2 0 94.8-52.5 165.6-129.9 165.6-26 0-50.5-14.1-58.9-30.1 0 0-13.9 55.3-16.6 65.9-5 18.3-14.8 36.5-23.8 50.6 21.3 6.3 43.8 9.7 67.1 9.7 137.0 0 248-111.0 248-248S393.0 8 256 8z"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__list-item">
+                <a class="social__list-link github" href="https://github.com/Artem-Kapelush/" target="_blank">
+                  <svg class="social__icon" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>  
+
+        <div class="footer__wrapper-main">
+          <div class="footer__client-info">
+            <h3 class="footer__title">Розділи сайту</h3>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a href="#slider" class="footer__item-link">Роботи</a>
+              </li>
+              <li class="footer__item">
+                <a href="#advantages" class="footer__item-link">Навички</a>
+              </li>
+              <li class="footer__item">
+                <a href="#catalog" class="footer__item-link">Каталог можливостей</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__media">
+            <h3 class="footer__title">Досягнення</h3>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a href="#" class="footer__item-link">Мої досягнення</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__item-link">Відгуки та підтримка</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__item-link">Поради для початківців</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__contact">
+            <h3 class="footer__title">Контакти</h3>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a href="https://www.google.com/maps/@47.8842679,35.0748904,3a,75y,227.63h,90t/data=!3m7!1e1!3m5!1sZpNZ-Avn6cuUrjwwveZJ7w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DZpNZ-Avn6cuUrjwwveZJ7w%26yaw%3D227.63205!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D" class="contact-link" target="_blank">
+                  <img class="contact__icon contact__icon-adress" src="img/svg/adress.svg" alt="Телефон">
+                  <span class="contact__description">Запоріжжя, Дніпровський район, вулиця Дмитра Вишневецького, 8.</span>
+                </a>
+              </li>
+              <li class="footer__item">
+                <a href="tel:+380932402707" class="contact-link">
+                  <img class="contact__icon contact__icon-phone" src="img/svg/phone.svg" alt="Адрес">
+                  <span class="contact__description">+380 93 240 27 07</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__copyright">
+          <h3 class="footer__copyright-title">Виконав Капелюш Артем © copyright</h3>
+        </div>
+      </div>
+    </footer>
+  </div>    
+
+  <div id="loginModal" class="modal">
+    <div class="modal__content">
+      <span class="modal__close">&times;</span>
+      <h2>Увійти</h2>
+      <form class="login__form" id="loginForm">
+        <div class="form__group">
+          <input type="email" id="email" name="email" placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@gmail\.com$">
+          <div class="error__message" id="emailError">Будь ласка, використовуйте пошту з спеціальним знаком @</div>
+        </div>
+        <div class="form__group">
+          <input type="password" id="password" name="password" placeholder="Пароль" required>
+        </div>
+        <button type="submit" class="login__button">Увійти</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="cartModal" class="modal">
+    <div class="modal__content">
+      <span class="modal__close">&times;</span>
+      <h2>Кошик</h2>
+      <div class="cart__items">
+        <div class="cart__empty">Ваш кошик порожній</div>
+      </div>
+      <div class="cart__total">
+        <div class="total__label">Загальна сума:</div>
+        <div class="total__amount">0 грн</div>
+      </div>
+      <button class="checkout__button">Оформити замовлення</button>
+    </div>
+  </div>  
+
+	<script src="js/script.js"></script>
+</body>
+</html>
